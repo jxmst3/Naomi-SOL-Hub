@@ -1,0 +1,783 @@
+{
+  "version": "3.0",
+  "rows": 6,
+  "cols": 8,
+  "sim_time": 0.16000000000000003,
+  "enable_physics": true,
+  "naomi_mode": true,
+  "horizontal_edges": [
+    [
+      {
+        "polarity": -1,
+        "energy": 1.5840718083355974,
+        "phase": 1.0053096491487337,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": -1,
+        "energy": 1.5840718083355974,
+        "phase": 1.0053096491487337,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ]
+  ],
+  "vertical_edges": [
+    [
+      {
+        "polarity": 1,
+        "energy": 1.5840718083355974,
+        "phase": 1.2063715789784804,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 1,
+        "energy": 1.5840718083355974,
+        "phase": 1.2063715789784804,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ],
+    [
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      },
+      {
+        "polarity": 0,
+        "energy": 0.0,
+        "phase": 0.0,
+        "coherence": 1.0
+      }
+    ]
+  ],
+  "squares": {
+    "0,0": {
+      "r": 0,
+      "c": 0,
+      "energy": 1.998,
+      "residue": 0,
+      "formation_time": 0.016,
+      "stability": 0.8476421775987487,
+      "resonance_freq": 1.0,
+      "optical_reflectance": 0.9455603075541676,
+      "servo_angle_x": 0.5106774810740173,
+      "servo_angle_y": 5.51784490035558
+    }
+  },
+  "block_residue": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "stats": {
+    "total_energy": 6.336287233342389,
+    "squares_formed": 1,
+    "edges_active": 4,
+    "average_stability": 0.8476421775987487,
+    "resonance_strength": 1.0,
+    "sim_time": 0.16000000000000003
+  },
+  "naomi": {
+    "panel_mapping": {
+      "0,0": 0,
+      "0,3": 1,
+      "0,6": 2,
+      "3,0": 3,
+      "3,3": 4,
+      "3,6": 5
+    },
+    "crystal_position": [
+      3,
+      4
+    ],
+    "crystal_rotation": 9.600000000000001,
+    "crystal_energy": 1.0
+  }
+}
