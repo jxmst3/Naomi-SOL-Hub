@@ -1,0 +1,215 @@
+# Naomi SOL Hub Configuration
+# ==============================
+# Edit this file to match your hardware setup
+
+hardware:
+  # Teensy 4.1 serial port
+  teensy_port: "/dev/ttyACM0"  # Linux/Mac
+  # teensy_port: "COM3"  # Windows
+  
+  # Arduino Nano ports (if using as additional controllers)
+  arduino_nanos:
+    - "/dev/ttyUSB0"
+    - "/dev/ttyUSB1"
+    - "/dev/ttyUSB2"
+  
+  # PCA9685 I2C addresses (set via jumpers)
+  # You can chain up to 62 boards!
+  pca9685_addresses:
+    - 0x40  # Board 1 (no jumpers)
+    - 0x41  # Board 2 (A0 jumper)
+    # - 0x42  # Board 3 (A1 jumper)
+  
+  servos_per_board: 16
+  total_servos: 36  # 12 panels × 3 servos
+  
+  # IMU sensor count and addresses
+  imu_count: 3
+  imu_addresses:
+    - 0x68  # MPU-9250 #1
+    - 0x69  # MPU-9250 #2 (AD0 pulled high)
+    - 0x6A  # MPU-9250 #3 (via multiplexer)
+  
+  # Camera devices for laser tracking
+  camera_devices:
+    - 0  # Built-in webcam
+    # - 1  # USB camera 1
+    # - 2  # USB camera 2
+
+servo:
+  # MG90S servo specifications
+  min_angle: 0.0
+  max_angle: 180.0
+  center_angle: 90.0
+  
+  # Pulse width range (microseconds)
+  min_pulse_us: 500
+  max_pulse_us: 2500
+  
+  # PWM frequency
+  frequency_hz: 60
+  
+  # Movement speed (degrees per second)
+  max_speed: 60.0
+  
+  # Safety limits
+  enable_limits: true
+  soft_limit_margin: 5.0  # degrees from hard limits
+
+panel:
+  # Pentagon panel geometry
+  edge_length: 150.0  # mm
+  thickness: 2.0  # mm
+  
+  # BaBot mechanism parameters
+  base_radius: 75.0  # mm
+  platform_radius: 60.0  # mm
+  horn_length: 25.0  # mm
+  rod_length: 100.0  # mm
+  
+  # Dodecahedron geometry
+  dihedral_angle: 116.565  # degrees
+  num_panels: 12
+
+laser:
+  # HSV color range for red laser
+  hsv_lower: [0, 100, 100]
+  hsv_upper: [10, 255, 255]
+  
+  # Alternative for green laser
+  # hsv_lower: [40, 100, 100]
+  # hsv_upper: [80, 255, 255]
+  
+  # Tracking algorithm
+  # Options: KCF (fast), CSRT (accurate), MOSSE (fastest)
+  tracking_algorithm: "KCF"
+  
+  # Detection parameters
+  min_contour_area: 5  # pixels
+  max_contour_area: 200  # pixels
+  
+  # 3D position estimation
+  enable_stereo: false  # requires calibrated camera pair
+  estimated_depth: 500.0  # mm (if stereo disabled)
+
+sensor_fusion:
+  # Madgwick filter parameters
+  beta: 0.05  # Filter gain (0.01 - 0.5)
+  sample_rate: 100  # Hz
+  
+  # Multi-IMU fusion
+  use_weighted_average: true
+  use_extended_kalman_filter: false  # More complex, optional
+  
+  # Calibration
+  auto_calibrate: true
+  calibration_samples: 100
+
+control:
+  # Control loop frequency
+  rate_hz: 50
+  
+  # Enable subsystems
+  enable_laser_tracking: true
+  enable_sensor_fusion: true
+  enable_servo_control: true
+  
+  # Safety features
+  enable_watchdog: true
+  watchdog_timeout_ms: 1000
+  
+  # Emergency stop
+  emergency_stop_key: "q"
+
+vision:
+  # Camera resolution
+  width: 640
+  height: 480
+  fps: 30
+  
+  # ROI (Region of Interest) for laser detection
+  # Format: [x, y, width, height] or null for full frame
+  roi: null
+  
+  # Display settings
+  show_preview: true
+  draw_tracking_info: true
+
+machine_learning:
+  # Enable ML features
+  enable_trajectory_prediction: false
+  enable_reinforcement_learning: false
+  
+  # RL training parameters
+  algorithm: "PPO"  # PPO, SAC, or TD3
+  training_timesteps: 100000
+  checkpoint_interval: 10000
+  
+  # Model paths
+  trained_model: "models/trained_policy.zip"
+  training_logs: "logs/tensorboard/"
+
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  
+  # Log to file
+  log_to_file: true
+  log_file: "logs/naomi_hub.log"
+  
+  # Data recording
+  record_servo_data: false
+  record_imu_data: false
+  record_laser_data: false
+  data_directory: "recorded_data/"
+
+communication:
+  # Serial communication
+  baud_rate: 115200
+  serial_timeout: 1.0
+  
+  # Network (for future features)
+  enable_network: false
+  host: "0.0.0.0"
+  port: 8080
+  
+  # Webhook for cloud integration
+  webhook_url: null
+  webhook_events:
+    - "anomaly_detected"
+    - "system_error"
+
+simulation:
+  # PyBullet parameters
+  physics_timestep: 0.01  # seconds
+  render_fps: 60
+  enable_gui: true
+  
+  # Simulation world
+  gravity: -9.81  # m/s²
+  enable_collisions: true
+  
+  # Visual settings
+  camera_distance: 1.0  # meters
+  camera_yaw: 45  # degrees
+  camera_pitch: -30  # degrees
+
+development:
+  # Debug mode
+  debug: false
+  verbose: false
+  
+  # Testing
+  run_self_tests: false
+  skip_hardware_init: false  # for software testing
+  
+  # Performance monitoring
+  enable_profiling: false
+  profile_output: "profiling_results.txt"
+
+# ==============================
+# Notes:
+# - Restart system after changing config
+# - Test changes in simulation mode first
+# - Keep backup of working configuration
+# ==============================

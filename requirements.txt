@@ -1,60 +1,67 @@
-# NAOMI SOL HUB - Complete Requirements
-# Version: 4.0 Ultimate Integration
+# Naomi SOL Hub - Python Dependencies
+# All libraries identified from open-source research
 
-# Core Runtime
-pygame>=2.5.0
-PyOpenGL>=3.1.7
-pybullet>=3.2.5
+# ===== CORE DEPENDENCIES =====
 numpy>=1.24.0
 scipy>=1.10.0
-networkx>=3.1
 
-# AI & Machine Learning
-torch>=2.0.0  # Optional: for real agents
-tensorflow>=2.13.0  # Optional: Keras models
-ace-framework[all]>=1.0.0  # Agentic Context Engine
-litellm>=1.0.0  # For ACE's LLM client
+# ===== SERVO CONTROL =====
+# Adafruit PCA9685 libraries
+# Source: https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library
+# Source: https://github.com/adafruit/Adafruit_CircuitPython_PCA9685
+adafruit-circuitpython-pca9685>=3.4.0
+adafruit-circuitpython-servokit>=1.3.0
 
-# CAD Generation
-cadquery>=2.3.0  # Optional: parametric CAD (conda recommended)
-numpy-stl>=3.0.0  # STL file generation
-trimesh>=3.23.0  # Mesh processing
-scipy>=1.10.0  # Spatial operations
+# ===== COMPUTER VISION & LASER TRACKING =====
+# OpenCV for laser tracking
+# Based on: https://github.com/bradmontgomery/python-laser-tracker
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0  # For advanced trackers (KCF, CSRT, MOSSE)
 
-# Hardware Integration
-pyserial>=3.5
-bleak>=0.21.0  # BLE communication
-pyusb>=1.2.1  # USB communication
+# ===== SENSOR FUSION =====
+# Adafruit IMU libraries for MPU-9250
+# Source: https://github.com/adafruit/Adafruit_CircuitPython_MPU6050
+adafruit-circuitpython-mpu6050>=1.2.0
+adafruit-blinka>=8.20.0  # Board compatibility layer
 
-# Data Visualization & Analysis
-matplotlib>=3.7.0
-plotly>=5.14.0
-pandas>=2.0.0
+# ===== PHYSICS SIMULATION =====
+# PyBullet for robotics simulation
+# Source: https://github.com/bulletphysics/bullet3
+pybullet>=3.2.5
+
+# ===== MACHINE LEARNING =====
+# Stable-Baselines3 for reinforcement learning
+# Source: https://github.com/DLR-RM/stable-baselines3
+stable-baselines3[extra]>=2.1.0
+torch>=2.0.0  # PyTorch backend
+
+# ===== CAD GENERATION =====
+# Python polyhedra library
+# Source: https://github.com/Hand-and-Machine/polyhedra
+# Note: May need manual installation from GitHub
+# polyhedra @ git+https://github.com/Hand-and-Machine/polyhedra.git
+
+# Trimesh for mesh operations (STL validation)
+trimesh>=3.23.0
+networkx>=3.1  # Required by trimesh
+
+# ===== SERIAL COMMUNICATION =====
+pyserial>=3.5  # For Arduino/Teensy communication
+
+# ===== UTILITIES =====
+pyyaml>=6.0  # Configuration files
+Click>=8.1.0  # CLI interface
+colorama>=0.4.6  # Colored terminal output
+
+# ===== OPTIONAL: ADVANCED FEATURES =====
+# Multi-camera calibration
+# Source: https://github.com/idiap/multicamera-calibration (C++)
+# Source: https://github.com/TemugeB/python_stereo_camera_calibrate
+# No pip package - use OpenCV calibration functions
+
+# Trajectory prediction with ML
+# Source: https://github.com/aroongta/Pedestrian_Trajectory_Prediction
+# tensorflow>=2.13.0  # Uncomment if using trajectory prediction
+
+# n8n webhook integration (no pip package needed, uses requests)
 requests>=2.31.0
-
-# Real-time Data Processing
-asyncio>=3.4.3
-aiohttp>=3.8.0
-
-# Utilities
-rich>=13.5.0  # Beautiful terminal output
-tqdm>=4.65.0  # Progress bars
-python-dotenv>=1.0.0  # Environment variables
-
-# Optional: Advanced Features
-opencv-python>=4.8.0  # Computer vision for laser tracking
-scikit-learn>=1.3.0  # Machine learning
-h5py>=3.9.0  # Model persistence
-
-# Development Tools (Optional)
-pytest>=7.4.0
-black>=23.7.0
-mypy>=1.4.0
-
-# Arduino AI Chat Library (install manually from GitHub)
-# https://github.com/bayeggex/Arduino-AI-Chat-Library
-
-# Note: Some packages may require conda installation
-# Recommended conda packages: cadquery, tensorflow
-# conda install -c conda-forge cadquery
-# conda install tensorflow
