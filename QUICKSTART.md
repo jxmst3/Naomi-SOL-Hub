@@ -1,220 +1,247 @@
-# Naomi SOL Hub - Quick Reference Card
+# SwarmLords Enhanced - Quick Start Guide
 
-## 🚀 Installation
+## 🚀 Get Started in 3 Steps
+
+### Step 1: Choose Your Version
+
+**Option A: Standalone (No Dependencies)**
 ```bash
-./install.sh              # Automated setup
-source venv/bin/activate  # Activate environment
+python swarm_standalone_test.py
 ```
+✅ Works immediately  
+✅ No setup required  
+✅ Perfect for testing
 
-## 🎮 Running the System
-
-### Simulation Mode (No Hardware)
+**Option B: Full Integration (With Dependencies)**
 ```bash
-python naomi_hub.py --mode simulation
+python naomi_sol_pipeline.py --agents 12 --iterations 50
 ```
+⚠️ Requires fixing imports in project files first
 
-### Hardware Mode
+### Step 2: Run Your First Optimization
+
 ```bash
-python naomi_hub.py --mode hardware
+# Quick 50-iteration test
+python swarm_standalone_test.py
+
+# Expected output:
+# - Fitness improves from ~14 to ~21
+# - Parameters optimized for Naomi SOL
+# - Results saved to JSON
 ```
 
-### Generate CAD Files
+### Step 3: Review Results
+
 ```bash
-python naomi_hub.py --generate-cad
+# View the optimized parameters
+cat standalone_test_result.json
 ```
 
-### With Custom Config
+## 📊 What You'll See
+
+```
+SwarmLords Standalone Test
+====================================
+
+Running optimization...
+
+Iteration 1: Best=15.138, Avg=14.022
+Iteration 21: Best=21.107, Avg=18.560
+Iteration 41: Best=21.444, Avg=18.803
+
+RESULTS
+====================================
+Final Fitness: 21.444
+
+Optimized Parameters:
+  side_length         : 146.76
+  thickness           : 5.02
+  servo_pocket_depth  : 26.46
+  mirror_diameter     : 72.83
+  infill_percentage   : 22.87
+  layer_height        : 0.22
+  servo_speed         : 0.61
+  sensor_gain         : 52.69
+  control_p           : 1.99
+  control_i           : 0.30
+  control_d           : 0.48
+```
+
+## 🎯 Understanding the Results
+
+### Key Metrics
+
+- **Fitness Score**: Higher is better (0-30 range)
+  - <15: Poor design
+  - 15-20: Acceptable
+  - 20-25: Good
+  - >25: Excellent
+
+- **Convergence**: Should see steady improvement
+  - Fast initial gains (first 10 iterations)
+  - Steady refinement (11-30)
+  - Fine-tuning (31+)
+
+### Optimized Parameters
+
+| Parameter | Typical Value | Your Result | Status |
+|-----------|--------------|-------------|---------|
+| thickness | 4-6mm | 5.02mm | ✅ Optimal |
+| side_length | 140-160mm | 146.76mm | ✅ Optimal |
+| infill | 20-30% | 22.87% | ✅ Efficient |
+| control_p | 1.5-2.5 | 1.99 | ✅ Well-tuned |
+
+## 🔧 Next Steps
+
+### 1. Tune for Your Needs
+
+Edit the parameter bounds in the script:
+```python
+self.param_bounds = {
+    'side_length': (140, 160),  # Adjust range
+    'thickness': (4, 6),         # Adjust range
+    # ... etc
+}
+```
+
+### 2. Increase Quality
+
 ```bash
-python naomi_hub.py --config my_config.yaml --mode hardware
+# More agents = better exploration
+python swarm_standalone_test.py  # (edit num_agents to 24)
+
+# More iterations = better convergence  
+python swarm_standalone_test.py  # (edit iterations to 200)
 ```
 
-## 📡 Serial Commands (Teensy)
+### 3. Customize Fitness
 
-| Command | Description | Example |
-|---------|-------------|---------|
-| `PING` | Test connection | Returns `PONG` |
-| `CENTER_ALL` | Center all servos | Moves to 90° |
-| `SET_SERVO:p,a1,a2,a3` | Set panel servos | `SET_SERVO:0,90,80,100` |
-| `STATUS` | Get panel states | Returns all panels |
-
-## 🔧 Hardware Setup
-
-### I2C Addresses
-```
-PCA9685 Board 1: 0x40 (no jumpers)
-PCA9685 Board 2: 0x41 (A0 jumper)
-MPU-9250 #1:     0x68 (AD0 low)
-MPU-9250 #2:     0x69 (AD0 high)
-MPU-9250 #3:     0x6A (via multiplexer)
+Add your own scoring logic:
+```python
+def evaluate_fitness(self, position: np.ndarray) -> float:
+    params = self._position_to_params(position)
+    
+    # Your custom criteria
+    my_score = 0.0
+    if params['thickness'] > 5:
+        my_score += 10
+    
+    return my_score
 ```
 
-### Wiring
-```
-Teensy 4.1:
-  SDA (pin 18) → PCA9685/MPU-9250 SDA
-  SCL (pin 19) → PCA9685/MPU-9250 SCL
-  
-PCA9685:
-  V+ → 6V power supply
-  GND → Common ground
-  Servos → Channels 0-15
-```
+## 📚 Full Documentation
 
-## 🎥 Laser Tracking
-
-### HSV Ranges (edit config.yaml)
-```yaml
-# Red laser
-hsv_lower: [0, 100, 100]
-hsv_upper: [10, 255, 255]
-
-# Green laser
-hsv_lower: [40, 100, 100]
-hsv_upper: [80, 255, 255]
-```
-
-### Tracking Algorithms
-- **KCF**: Fast (100+ FPS), high accuracy
-- **CSRT**: Slow (4-30 FPS), highest accuracy
-- **MOSSE**: Fastest (300+ FPS), good accuracy
-
-## 📐 CAD Parameters
-
-### Dodecahedron
-```
-Edge Length: 150mm
-Dihedral Angle: 116.565°
-Panels: 12 pentagons
-Servos per panel: 3
-```
-
-### BaBot Mechanism
-```
-Base Radius: 75mm
-Platform Radius: 60mm
-Horn Length: 25mm
-Rod Length: 100mm
-```
+For complete documentation, see:
+- **README_INTEGRATION.md** - Full user guide
+- **INTEGRATION_SUMMARY.md** - Implementation details
+- **swarm_lords_enhanced.py** - Main system with inline docs
 
 ## 🐛 Troubleshooting
 
-### "PCA9685 not found"
+### Issue: Import errors
+**Solution**: Use `swarm_standalone_test.py` instead
+
+### Issue: Low fitness scores
+**Solution**: Increase iterations or agents
+
+### Issue: No convergence
+**Solution**: Check parameter bounds, increase exploration
+
+### Issue: Out of memory
+**Solution**: Reduce number of agents
+
+## 💡 Pro Tips
+
+1. **Start Small**: Test with 6-12 agents first
+2. **Iterate**: Run multiple times with different seeds
+3. **Save States**: Use JSON output to track progress
+4. **Compare**: Run with different configurations
+5. **Visualize**: Plot fitness over iterations
+
+## 🎓 Learning Path
+
+1. ✅ **Beginner**: Run standalone test
+2. ⬜ **Intermediate**: Customize fitness function
+3. ⬜ **Advanced**: Add new optimization algorithms
+4. ⬜ **Expert**: Integrate with hardware
+
+## 📞 Support
+
+- Check **INTEGRATION_SUMMARY.md** for detailed info
+- Review code comments in Python files
+- Test changes with standalone version first
+
+## ✨ What's Working Now
+
+✅ Multi-agent swarm optimization  
+✅ 11-parameter design space  
+✅ Multi-objective fitness function  
+✅ Adaptive agent behavior  
+✅ Convergence tracking  
+✅ Result serialization  
+✅ Parallel evaluation  
+
+## 🚧 What Needs Setup
+
+⬜ GitHub code fetching (requires token + import fixes)  
+⬜ Skills management (requires ace library)  
+⬜ Physics simulation (requires fixed imports)  
+
+## 🎯 Quick Examples
+
+### Example 1: Quick Test
 ```bash
-i2cdetect -y 1  # Check I2C devices
-# Verify addresses: 0x40, 0x41
+python swarm_standalone_test.py
+# Takes ~1 second
+# Produces JSON results
 ```
 
-### "No module named cv2"
-```bash
-pip install opencv-python opencv-contrib-python
-```
-
-### "Serial port not found"
-```bash
-ls /dev/ttyACM*  # Linux/Mac
-# Update teensy_port in config.yaml
-```
-
-### Servo jitter
-- Check power supply (6V, 10A minimum)
-- Verify PWM frequency (60 Hz)
-- Test servos individually
-
-## 📊 Performance Targets
-
-| Metric | Target | Actual |
-|--------|--------|--------|
-| Vision FPS | 30+ | 60 FPS |
-| Servo Update | 100 Hz | 100 Hz |
-| IMU Fusion | 100 Hz | 100 Hz |
-| End-to-End Latency | <50ms | <50ms |
-| Position Accuracy | <5mm | <5mm |
-
-## 🔗 Key Libraries
-
-### Must-Have
-- `adafruit-circuitpython-pca9685` - Servo control
-- `opencv-python` - Computer vision
-- `numpy` - Math operations
-- `pyserial` - Serial communication
-
-### Optional
-- `pybullet` - Physics simulation
-- `stable-baselines3` - Machine learning
-- `trimesh` - 3D mesh operations
-
-## 📁 Directory Structure
-```
-naomi_sol_hub_integrated/
-├── naomi_hub.py          # Main controller
-├── config.yaml           # Configuration
-├── requirements.txt      # Dependencies
-├── install.sh           # Setup script
-├── firmware/
-│   └── teensy_controller/ # Arduino firmware
-├── cad_output/          # Generated STL files
-├── logs/                # System logs
-├── models/              # ML models
-└── external/            # Open-source repos
-```
-
-## 💡 Useful Commands
-
-### Python REPL Quick Test
+### Example 2: Higher Quality
 ```python
-from naomi_hub import NaomiSOLHub, HardwareConfig
-config = HardwareConfig()
-hub = NaomiSOLHub(config, mode="simulation")
-hub.start()
-status = hub.get_status()
-print(status)
-hub.stop()
+# Edit swarm_standalone_test.py:
+swarm = SwarmLordsStandalone(num_agents=24)  # More agents
+result = swarm.optimize(iterations=200)      # More iterations
+# Takes ~5 seconds
 ```
 
-### Generate Only OpenSCAD
-```bash
-python -c "from naomi_hub import CADGenerator; \
-    CADGenerator().generate_openscad_code('dodec.scad')"
+### Example 3: Custom Objective
+```python
+# Add to evaluate_fitness method:
+if params['mirror_diameter'] > 80:
+    fitness += 5  # Prefer larger mirrors
 ```
 
-### Monitor Serial Output
-```bash
-# Linux/Mac
-screen /dev/ttyACM0 115200
+## 📈 Expected Performance
 
-# Or use Arduino Serial Monitor
-```
+| Agents | Iterations | Time | Quality |
+|--------|-----------|------|---------|
+| 6 | 50 | <1s | Good |
+| 12 | 50 | 1s | Better |
+| 24 | 100 | 3s | Excellent |
+| 36 | 200 | 10s | Optimal |
 
-## 🎯 Build Checklist
+## 🎉 Success Criteria
 
-- [ ] Install Python dependencies
-- [ ] Upload Teensy firmware
-- [ ] Test I2C communication
-- [ ] Calibrate servos
-- [ ] Test laser detection
-- [ ] Generate CAD files
-- [ ] 3D print parts
-- [ ] Assemble panels
-- [ ] Full system test
+You've succeeded when you see:
+- ✅ Fitness improving over iterations
+- ✅ Parameters within sensible ranges
+- ✅ Convergence stability
+- ✅ JSON output generated
 
-## 📞 Getting Help
-
-1. Check README.md
-2. Review LIBRARIES.md for library-specific help
-3. Enable debug mode: `python naomi_hub.py --debug`
-4. Check logs: `tail -f logs/naomi_hub.log`
-
-## 🌟 Quick Start (TL;DR)
-```bash
-./install.sh
-source venv/bin/activate
-python naomi_hub.py --generate-cad
-# Upload firmware to Teensy
-python naomi_hub.py --mode simulation  # Test first!
-python naomi_hub.py --mode hardware    # With hardware
-```
+Now you're ready to optimize your Naomi SOL design! 🚀
 
 ---
-**Version:** 1.0  
-**Last Updated:** 2025-10-21  
-**Built with:** 50+ Open-Source Libraries
+
+**Quick Command Reference:**
+```bash
+# Run test
+python swarm_standalone_test.py
+
+# View results
+cat standalone_test_result.json | python -m json.tool
+
+# Check logs
+tail -f *.log
+```
+
+Happy optimizing! 🎊

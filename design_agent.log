@@ -1,0 +1,16 @@
+2025-10-31 20:07:48,165 - __main__.DesignAgent - INFO - Starting generation with shap_e...
+2025-10-31 20:07:48,165 - __main__.ShapEBackend - INFO - Generating Shap-E model: 'dodecahedral chamber with servo mounts and mirrors'
+2025-10-31 20:07:48,165 - __main__.ShapEBackend - ERROR - OPENAI_API_KEY not set
+2025-10-31 20:07:48,165 - __main__.DesignAgent - ERROR - Workflow failed: Generation failed
+Traceback (most recent call last):
+  File "C:\Users\Jarret\Downloads\SwarmLords\design_agent_local.py", line 683, in design_and_print
+    raise RuntimeError("Generation failed")
+RuntimeError: Generation failed
+2025-10-31 20:07:59,361 - __main__.DesignAgent - INFO - Starting generation with shap_e...
+2025-10-31 20:07:59,361 - __main__.ShapEBackend - INFO - Generating Shap-E model: 'dodecahedral chamber with servo mounts and mirrors'
+2025-10-31 20:07:59,361 - __main__.ShapEBackend - ERROR - OPENAI_API_KEY not set
+2025-10-31 20:07:59,361 - __main__.DesignAgent - ERROR - Workflow failed: Generation failed
+Traceback (most recent call last):
+  File "C:\Users\Jarret\Downloads\SwarmLords\design_agent_local.py", line 683, in design_and_print
+    raise RuntimeError("Generation failed")
+RuntimeError: Generation failed

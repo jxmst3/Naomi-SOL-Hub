@@ -1,67 +1,50 @@
-# Naomi SOL Hub - Python Dependencies
-# All libraries identified from open-source research
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
 
-# ===== CORE DEPENDENCIES =====
+# Image processing
+Pillow>=10.0.0
 numpy>=1.24.0
-scipy>=1.10.0
-
-# ===== SERVO CONTROL =====
-# Adafruit PCA9685 libraries
-# Source: https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library
-# Source: https://github.com/adafruit/Adafruit_CircuitPython_PCA9685
-adafruit-circuitpython-pca9685>=3.4.0
-adafruit-circuitpython-servokit>=1.3.0
-
-# ===== COMPUTER VISION & LASER TRACKING =====
-# OpenCV for laser tracking
-# Based on: https://github.com/bradmontgomery/python-laser-tracker
 opencv-python>=4.8.0
-opencv-contrib-python>=4.8.0  # For advanced trackers (KCF, CSRT, MOSSE)
+imageio>=2.33.0
+imageio-ffmpeg>=0.4.9
 
-# ===== SENSOR FUSION =====
-# Adafruit IMU libraries for MPU-9250
-# Source: https://github.com/adafruit/Adafruit_CircuitPython_MPU6050
-adafruit-circuitpython-mpu6050>=1.2.0
-adafruit-blinka>=8.20.0  # Board compatibility layer
+# AI/ML models
+diffusers>=0.21.0
+transformers>=4.30.0
+accelerate>=0.20.0
+safetensors>=0.3.1
 
-# ===== PHYSICS SIMULATION =====
-# PyBullet for robotics simulation
-# Source: https://github.com/bulletphysics/bullet3
-pybullet>=3.2.5
+# Background removal
+rembg>=2.0.50
 
-# ===== MACHINE LEARNING =====
-# Stable-Baselines3 for reinforcement learning
-# Source: https://github.com/DLR-RM/stable-baselines3
-stable-baselines3[extra]>=2.1.0
-torch>=2.0.0  # PyTorch backend
+# Mesh processing
+pymeshlab>=2022.2.post3
+trimesh>=3.20.0
+networkx>=3.1
 
-# ===== CAD GENERATION =====
-# Python polyhedra library
-# Source: https://github.com/Hand-and-Machine/polyhedra
-# Note: May need manual installation from GitHub
-# polyhedra @ git+https://github.com/Hand-and-Machine/polyhedra.git
+# CAD/3D modeling
+cadquery>=2.3.0
+CadQuery>=2.3.0
 
-# Trimesh for mesh operations (STL validation)
-trimesh>=3.23.0
-networkx>=3.1  # Required by trimesh
-
-# ===== SERIAL COMMUNICATION =====
-pyserial>=3.5  # For Arduino/Teensy communication
-
-# ===== UTILITIES =====
-pyyaml>=6.0  # Configuration files
-Click>=8.1.0  # CLI interface
-colorama>=0.4.6  # Colored terminal output
-
-# ===== OPTIONAL: ADVANCED FEATURES =====
-# Multi-camera calibration
-# Source: https://github.com/idiap/multicamera-calibration (C++)
-# Source: https://github.com/TemugeB/python_stereo_camera_calibrate
-# No pip package - use OpenCV calibration functions
-
-# Trajectory prediction with ML
-# Source: https://github.com/aroongta/Pedestrian_Trajectory_Prediction
-# tensorflow>=2.13.0  # Uncomment if using trajectory prediction
-
-# n8n webhook integration (no pip package needed, uses requests)
+# 3D printing
 requests>=2.31.0
+
+# Audio
+pyttsx3>=2.90
+
+# CLI/GUI
+- argparse-dataclass>=2.0.1
+argparse-dataclass==2.0.0
+tqdm>=4.66.0
+
+# Optional: GPU support (install separately if needed)
+# tensorflow>=2.13.0  # For some models
+# tensorflow-addons>=0.21.0
+
+# Development
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.0.0

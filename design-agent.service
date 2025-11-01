@@ -1,0 +1,60 @@
+[Unit]
+Description=AI 3D Design & Printing Agent
+Documentation=https://github.com/yourusername/design-agent-local
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=design-agent
+Group=design-agent
+WorkingDirectory=/opt/design-agent
+
+# Python executable and script path - adjust to your environment
+ExecStart=/usr/bin/python3 -u /opt/design-agent/design_agent_local.py \
+  --backend gaussian \
+  --output /var/lib/design-agent/output \
+  --slice \
+  --narrate
+
+# Environment variables for GPU/CUDA support
+Environment="CUDA_VISIBLE_DEVICES=0"
+Environment="TORCH_HOME=/var/lib/design-agent/.torch"
+Environment="HF_HOME=/var/lib/design-agent/.huggingface"
+Environment="PYTHONUNBUFFERED=1"
+
+# Load API keys from environment file (create /etc/design-agent/api.env)
+EnvironmentFile=/etc/design-agent/api.env
+
+# Auto-restart policy
+Restart=always
+RestartSec=10
+StartLimitInterval=300
+StartLimitBurst=5
+
+# Process management
+TimeoutStartSec=600
+TimeoutStopSec=60
+KillMode=process
+KillSignal=SIGTERM
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=32768
+MemoryMax=16G
+CPUQuota=400%
+
+# Security hardening (optional but recommended)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/design-agent /opt/design-agent/work
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=design-agent
+
+[Install]
+WantedBy=multi-user.target

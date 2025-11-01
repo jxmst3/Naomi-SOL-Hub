@@ -1,0 +1,16 @@
+{
+  "backend": "shap_e",
+  "output_dir": "output",
+  "work_dir": "work",
+  "slice": true,
+  "narrate": false,
+  "layer_height": 0.202064824434959,
+  "infill_percentage": 26.890689708275204,
+  "nozzle_diameter": 0.4,
+  "print_temperature": 205,
+  "bed_temperature": 60,
+  "octopi_url": "http://octopi.local",
+  "octopi_api_key": "your_api_key_here",
+  "verbose": true,
+  "device": "cuda"
+}
